@@ -7,8 +7,9 @@
 			</ul>
 		</section>
 		<section id="series-list">
+			<h2>Series</h2>
 			<ul>
-				<li>ciai</li>
+				<li v-for="serie in series" :key="serie.id">{{ serie.name }}</li>
 			</ul>
 		</section>
 	</main>
@@ -17,7 +18,7 @@
 <script>
 export default {
 	name: "Main",
-	props: ["movies"],
+	props: ["movies", "series"],
 };
 </script>
 

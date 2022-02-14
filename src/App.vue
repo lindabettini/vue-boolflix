@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
-		<Header placeholder="Cerca un film..." @searched="searchMovie" />
-		<Main :movies="movies" />
+		<Header placeholder="Cerca un film..." @searched="searchUserRequest" />
+		<Main :movies="movies" :series="series" />
 	</div>
 </template>
 
@@ -20,11 +20,12 @@ export default {
 	data() {
 		return {
 			movies: [],
+			series: [],
 			apiKey: "9165cfcc7a4de7472e23d49699f35185",
 		};
 	},
 	methods: {
-		searchMovie(query) {
+		searchUserRequest(query) {
 			const config = {
 				params: {
 					api_key: this.apiKey,
@@ -35,6 +36,10 @@ export default {
 
 			axios.get(`https://api.themoviedb.org/3/search/movie`, config).then((res) => {
 				this.movies = res.data.results;
+			});
+
+			axios.get(`https://api.themoviedb.org/3/search/tv`, config).then((res) => {
+				this.series = res.data.results;
 			});
 		},
 	},
