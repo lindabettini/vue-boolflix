@@ -21,23 +21,26 @@ export default {
 		return {
 			movies: [],
 			apiKey: "9165cfcc7a4de7472e23d49699f35185",
-			query: "games",
+			query: "superman",
 		};
 	},
 	methods: {
 		searchMovie() {
 			const config = {
 				params: {
-					apiKey: this.apiKey,
+					api_key: this.apiKey,
 					query: this.query,
 					language: "it-IT",
 				},
 			};
 
-			axios.get(`https://api.themoviedb.org/3/search/movies`, config).then((res) => {
+			axios.get(`https://api.themoviedb.org/3/search/movie`, config).then((res) => {
 				this.movies = res.data.results;
 			});
 		},
+	},
+	mounted() {
+		this.searchMovie();
 	},
 };
 </script>
