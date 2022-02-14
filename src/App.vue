@@ -20,8 +20,8 @@ export default {
 	data() {
 		return {
 			movies: [],
-      apiKey= "9165cfcc7a4de7472e23d49699f35185",
-      query= "games",
+      apiKey: "9165cfcc7a4de7472e23d49699f35185",
+      query: "games",
 		};
 	},
   methods: {
@@ -42,7 +42,7 @@ export default {
         this.movies = res.data.results;
       });
   },
-};
+},
 </script>
 
 <style lang="scss"></style>
