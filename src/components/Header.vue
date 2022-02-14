@@ -1,8 +1,8 @@
-<template></template>
+<template><div>BOOLFLIX</div></template>
 
 <script>
 export default {
-	name: Header,
+	name: "Header",
 };
 </script>
 
