@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
-		<Header />
-		<Main />
+		<Header placeholder="Cerca un film..." @searched="searchMovie" />
+		<Main :movies="movies" />
 	</div>
 </template>
 
@@ -21,15 +21,14 @@ export default {
 		return {
 			movies: [],
 			apiKey: "9165cfcc7a4de7472e23d49699f35185",
-			query: "superman",
 		};
 	},
 	methods: {
-		searchMovie() {
+		searchMovie(query) {
 			const config = {
 				params: {
 					api_key: this.apiKey,
-					query: this.query,
+					query: query,
 					language: "it-IT",
 				},
 			};
@@ -38,9 +37,6 @@ export default {
 				this.movies = res.data.results;
 			});
 		},
-	},
-	mounted() {
-		this.searchMovie();
 	},
 };
 </script>

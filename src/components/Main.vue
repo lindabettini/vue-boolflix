@@ -1,8 +1,9 @@
 <template>
 	<main>
 		<section id="movies-list">
+			<h2>Movies</h2>
 			<ul>
-				<li>ciao</li>
+				<li v-for="movie in movies" :key="movie.id">{{ movie.title }}</li>
 			</ul>
 		</section>
 		<section id="series-list">
@@ -16,6 +17,7 @@
 <script>
 export default {
 	name: "Main",
+	props: ["movies"],
 };
 </script>
 
