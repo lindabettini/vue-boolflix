@@ -25,8 +25,8 @@ export default {
 		};
 	},
 	methods: {
-		searchUserRequest(query) {
-			if (!query) {
+		searchUserRequest(queryField) {
+			if (!queryField) {
 				this.movies = [];
 				this.series = [];
 				return;
@@ -35,7 +35,7 @@ export default {
 			const config = {
 				params: {
 					api_key: this.apiKey,
-					query: query,
+					query: queryField,
 					language: "it-IT",
 				},
 			};

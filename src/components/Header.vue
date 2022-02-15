@@ -1,8 +1,8 @@
 <template>
 	<header>
 		<h1>BOOLFLIX</h1>
-		<input type="text" name="search" v-model.trim="query" :placeholder="placeholder || 'Scrivi qui...'" @keyup.enter="$emit('searched', query)" />
-		<button type="button" @click="$emit('searched', query)">Cerca</button>
+		<input type="text" name="search" v-model.trim="queryField" :placeholder="placeholder || 'Scrivi qui...'" @keyup.enter="$emit('searched', queryField)" />
+		<button type="button" @click="$emit('searched', queryField)">Cerca</button>
 	</header>
 </template>
 
@@ -12,7 +12,7 @@ export default {
 	props: ["placeholder"],
 	data() {
 		return {
-			query: "",
+			queryField: "",
 		};
 	},
 };
