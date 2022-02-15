@@ -1,11 +1,13 @@
 <template>
 	<div class="row text-center">
-		<ul class="card col-3">
-			<li>{{ item.title }}</li>
-			<li>{{ item.original_title }}</li>
-			<li>{{ item.original_language }}</li>
-			<li>{{ item.vote_average }}</li>
-		</ul>
+		<div class="card col-3">
+			<ul>
+				<li>{{ item.title || item.name }}</li>
+				<li>{{ item.original_title || original_name }}</li>
+				<li>{{ item.original_language }}</li>
+				<li>{{ item.vote_average }}</li>
+			</ul>
+		</div>
 	</div>
 </template>
 
