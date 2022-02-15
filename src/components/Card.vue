@@ -1,25 +1,43 @@
 <template>
-	<div class="row text-center">
-		<div class="card col-3">
-			<ul>
-				<li>{{ item.title || item.name }}</li>
-				<li>{{ item.original_title || original_name }}</li>
-				<li>{{ item.original_language }}</li>
-				<li>{{ item.vote_average }}</li>
-			</ul>
-		</div>
-	</div>
+	<ul class="col-3">
+		<li>
+			<h4>{{ item.title || item.name }}</h4>
+		</li>
+		<li>
+			<h6>{{ item.original_title || item.original_name }}</h6>
+		</li>
+		<li>
+			<img v-if="flags.includes(item.original_language)" :src="flagSrc" :alt="item.original_language" />
+			<span v-else>{{ item.original_language }}</span>
+		</li>
+		<li>{{ item.vote_average }}</li>
+	</ul>
 </template>
 
 <script>
 export default {
 	name: "Card",
 	props: ["item"],
+	data() {
+		return {
+			flags: ["it", "en"],
+		};
+	},
+	computed: {
+		flagSrc() {
+			return require(`../assets/img/${this.item.original_language}.png`);
+		},
+	},
 };
 </script>
 
 <style lang="scss" scoped>
 ul {
 	list-style-type: none;
+}
+
+img {
+	height: 20px;
+	widows: auto;
 }
 </style>

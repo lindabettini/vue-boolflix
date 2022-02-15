@@ -6,11 +6,15 @@
 		<div v-else>
 			<section v-if="movies.length" id="movies-list">
 				<h2>Movies</h2>
-				<Card v-for="movie in movies" :key="movie.id" :item="movie" />
+				<div class="row text-center">
+					<Card v-for="movie in movies" :key="movie.id" :item="movie" />
+				</div>
 			</section>
 			<section v-if="series.length" id="series-list">
 				<h2>Series</h2>
-				<Card v-for="serie in series" :key="serie.id" :item="serie" />
+				<div class="row text-center">
+					<Card v-for="serie in series" :key="serie.id" :item="serie" />
+				</div>
 			</section>
 		</div>
 	</main>
