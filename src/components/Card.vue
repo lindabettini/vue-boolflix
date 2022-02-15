@@ -10,7 +10,10 @@
 			<img v-if="flags.includes(item.original_language)" :src="flagSrc" :alt="item.original_language" />
 			<span v-else>{{ item.original_language }}</span>
 		</li>
-		<li>{{ item.vote_average }}</li>
+		<li>
+			{{ item.vote_average }}
+			<i class="fa-solid fa-star"></i>
+		</li>
 	</ul>
 </template>
 
