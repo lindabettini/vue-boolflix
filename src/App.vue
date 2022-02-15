@@ -26,6 +26,12 @@ export default {
 	},
 	methods: {
 		searchUserRequest(query) {
+			if (!query) {
+				this.movies = [];
+				this.series = [];
+				return;
+			}
+
 			const config = {
 				params: {
 					api_key: this.apiKey,
