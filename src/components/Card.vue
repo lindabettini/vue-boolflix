@@ -53,6 +53,11 @@ export default {
 	height: 500px;
 	color: white;
 	cursor: pointer;
+	&:hover ul {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 }
 
 ul {
@@ -61,9 +66,7 @@ ul {
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.6);
 	text-align: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	display: none;
 	li {
 		margin: 5px;
 	}
