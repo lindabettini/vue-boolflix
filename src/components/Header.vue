@@ -35,6 +35,8 @@ header {
 	input {
 		border: 1px solid black;
 		border-radius: 10px 0 0 10px;
+		height: 39px;
+		padding: 10px;
 	}
 	button {
 		background-color: rgb(227, 8, 19);
@@ -42,6 +44,10 @@ header {
 		font-weight: 500;
 		border-radius: 0 10px 10px 0;
 		border: 1px solid black;
+		height: 40px;
+		&:active {
+			border: 1px solid rgb(227, 8, 19);
+		}
 	}
 }
 </style>
