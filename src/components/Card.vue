@@ -11,8 +11,8 @@
 			<span v-else>{{ item.original_language }}</span>
 		</li>
 		<li>
-			{{ calculateStars }}
-			<i v-for="(star, index) in calculateStars" :key="index" class="fas fa-star"></i>
+			<div>Votato: {{ vote }} stelle</div>
+			<i v-for="n in 5" :key="n" class="fa-star" :class="n <= vote ? 'fas' : 'far'"></i>
 		</li>
 	</ul>
 </template>
@@ -30,12 +30,9 @@ export default {
 		flagSrc() {
 			return require(`../assets/img/${this.item.original_language}.png`);
 		},
-		calculateStars() {
-			let toPrint;
-			toPrint = this.item.vote_average;
-			toPrint = toPrint / 2;
-			toPrint = Math.ceil(toPrint);
-			return toPrint;
+		vote() {
+			let vote = Math.ceil(this.item.vote_average / 2);
+			return vote;
 		},
 	},
 };
