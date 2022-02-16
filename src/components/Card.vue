@@ -2,7 +2,7 @@
 	<div class="card-container m-3 p-0" :style="{ backgroundImage: `url(${posterPath})` }">
 		<ul class="col-3 p-3">
 			<li>
-				<h4>{{ item.title || item.name }}</h4>
+				<h2>{{ item.title || item.name }}</h2>
 			</li>
 			<li>
 				<h6>{{ item.original_title || item.original_name }}</h6>
@@ -12,10 +12,8 @@
 				<span v-else>{{ item.original_language }}</span>
 			</li>
 			<li>
-				<div>Votato: {{ vote }} stelle</div>
 				<i v-for="n in 5" :key="n" class="fa-star" :class="n <= vote ? 'fas' : 'far'"></i>
 			</li>
-			<li><img :src="posterPath" :alt="item.title || item.name" /></li>
 		</ul>
 	</div>
 </template>
@@ -53,6 +51,8 @@ export default {
 .card-container {
 	width: 342px;
 	height: 500px;
+	color: white;
+	cursor: pointer;
 }
 
 ul {
@@ -60,6 +60,13 @@ ul {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.6);
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	li {
+		margin: 5px;
+	}
 }
 
 img {
