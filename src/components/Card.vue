@@ -53,6 +53,9 @@ export default {
 	height: 500px;
 	color: white;
 	cursor: pointer;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	&:hover ul {
 		display: flex;
 		flex-direction: column;
