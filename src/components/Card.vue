@@ -60,6 +60,7 @@ export default {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		border: 1px solid rgb(146, 146, 146);
 	}
 }
 
