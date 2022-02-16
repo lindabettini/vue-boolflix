@@ -46,5 +46,6 @@ ul {
 	align-content: center;
 	text-align: center;
 	height: 100vh;
+	color: rgb(187, 187, 187);
 }
 </style>

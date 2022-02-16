@@ -54,4 +54,7 @@ export default {
 
 <style lang="scss">
 @import "./assets/scss/style.scss";
+body {
+	background-color: rgb(36, 36, 36);
+}
 </style>
