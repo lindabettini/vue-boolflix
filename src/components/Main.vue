@@ -16,7 +16,7 @@
 			<section v-if="series.length" id="series-list" class="list-section">
 				<h2 class="text-center">Series</h2>
 				<div class="list-section">
-					<div class="row text-center">
+					<div class="row text-center justify-content-center">
 						<Card v-for="serie in series" :key="serie.id" :item="serie" />
 					</div>
 				</div>
@@ -47,5 +47,10 @@ ul {
 	text-align: center;
 	height: 100vh;
 	color: rgb(187, 187, 187);
+}
+
+section h2 {
+	color: rgb(187, 187, 187);
+	margin: 30px 0 10px 0;
 }
 </style>
